@@ -10,14 +10,14 @@ dará com a entrada de um salário negativo.
  */
 
 int main(){
-	float salario=0, somaSalario=0, hisSalario=0, mediaSalario=0, maiorSalario=0, ate100=0, porcentagemAte100=0;
-	int count=1, nFilhos=0, hisFilhos=0, mediaFilhos=0, somaFilhos=0;
+	float salario=0, somaSalario=0, hisSalario=0, mediaSalario=0, maiorSalario=0, ate100=0, porcentagemAte100=0, mediaFilhos=0, hisFilhos=0;
+	int count=1, nFilhos=0, somaFilhos=0;
 	
 	do{
 		printf("\n\n+---------------------------------------+\n");
 		printf("|               PESQUISA                |\n");
 		printf("+---------------------------------------+\n");
-		printf("Insira seu salario: ");
+		printf("Insira seu salario: R$  ");
 		scanf("%f",&salario);
 		
 		if(salario>=0){
@@ -31,8 +31,9 @@ int main(){
 			
 			if(salario<101){
 				ate100++;
-				porcentagemAte100=(ate100*100)/count;
 			}
+			
+			porcentagemAte100=(ate100*100)/count;
 			
 			printf("Quantos filhos voce possui? ");
 			scanf("%d",&nFilhos);
@@ -40,14 +41,14 @@ int main(){
 			somaFilhos=hisFilhos+nFilhos;
 			hisFilhos=somaFilhos;
 			mediaFilhos=hisFilhos/count;
-		}
 		
-		printf("\nPesquisa efetuada com sucesso! Obrigado!!\n\n");
-		count++;
+			printf("\nPesquisa efetuada com sucesso! Obrigado!!\n\n");
+			count++;
+		}
 	}while(salario>=0);
 	
-	printf("Foi contastado na pesquisa que, a media salarial da populacao e de R$ %.2f, \na media do numero de filhos foi de %d, \no maior salario registrado foi R$ %.2f e a porcentagem de pessoas que ganham ate R$ 100,00 foi de %.2f%%",mediaSalario,mediaFilhos,maiorSalario,porcentagemAte100);
-	
+	printf("\n\nFoi contastado na pesquisa que, a media salarial dos entrevistados e de R$ %.2f, \na media do numero de filhos foi de %.2f, \no maior salario registrado foi R$ %.2f e a porcentagem de pessoas que ganham ate R$ 100,00 foi de %.2f%%\n",mediaSalario,mediaFilhos,maiorSalario,porcentagemAte100);
+	printf("%d pessoas foram entrevistadas\n\n",count-1);
 	
 	return 0;
 }

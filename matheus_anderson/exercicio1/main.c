@@ -1,4 +1,4 @@
-ude <stdio.h>
+#include <stdio.h>
 
 int main() {
 	//	1. Escreva um programa de controle de senha que dê três chances de acerto ao usuário; se ele não conseguir, o programa deve avisar que o cartão foi bloqueado.
